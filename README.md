@@ -1,2 +1,2 @@
 # EtgiWhatsappProject
-Firebase kullanılarak yapılmış ufak bir whatsapp web uygulamasıdır.
+AngularJS ve Firebase kullanılarak yapılmış ufak bir whatsapp web uygulamasıdır.
