@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>Etgi Whatsapp Projesi</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="appController">
+
+        <div class="row" style="">
+            <div class="container">
+                <div class="card bg-light" style="">
+                    <div class="card-header">
+                        Sohbet Uygulaması
+                    </div>
+                    <div class="card-body" style="">
+                        <!-- Giriş ekranı tasarımı başlangıcı -->
+                        <div id="girisEkrani">
+                            <div class="row">
+                                <div class="col-md-4 offset-md-4">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="kullanici_adi">@</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Kullanıcı adı giriniz"
+                                               aria-label="Kullanıcı adı giriniz" aria-describedby="kullanici_adi" id="kadi">
+                                    </div>
+                                    <button type="button" ng-click="registerMember();" class="form-control btn btn-success">Üye Ol</button>
+                                    <br><br>
+                                    <button type="button" ng-click="logIn();" class="form-control btn btn-success">Giriş Yap</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Giriş ekranı tasarımı bitiş -->
+
+                        <div id="kullanicilar" style="display:none;" class="dropdown text-center">
+                            <i>CHAT YAPILACAK KULLANICIYI SEÇ </i>&nbsp;
+                            <select class="btn btn-success dropdown-toggledropdown-menu" id="users">
+                                
+                            </select>
+                            <button type="button" ng-click="startChat();" class="btn btn-success"> SOHBETİ BAŞLAT </button>
+                            <button type="button" ng-click="logOut();" class="btn btn-danger">ÇIKIŞ YAP</button>
+                        </div>
+
+
+<br><br><br>                        
+
+                        <div id="chatEkrani" style="display:none;">
+                            <div class="row">
+                                <div id="mesajAlani" class="col-md-12">
+
+                                </div>
+                                <div id="yeniMesajAlani" class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <input type="text" class="form-control" id="mesaj"
+                                                   placeholder="Mesaj yazınız.." />
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button type="button" ng-click="sendMessage();" class="form-control btn btn-success">Gönder</button>
+                                           <br><br>
+                                            <button type="button" ng-click="finishChat();" class="form-control btn btn-danger">Sohbeti Bitir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAojvNUJsTRqybVNTtdVXy7OU-rFzvArZs",
+        authDomain: "etgiwp-3ea49.firebaseapp.com",
+        databaseURL: "https://etgiwp-3ea49.firebaseio.com",
+        projectId: "etgiwp-3ea49",
+        storageBucket: "",
+        messagingSenderId: "663211726205"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="islemler.js"></script>
+
+</html>
