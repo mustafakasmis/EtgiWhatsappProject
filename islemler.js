@@ -146,7 +146,7 @@ app.controller('appController', function ($scope) {
     }
 
     $scope.finishChat=function(){
-          clearInterval(function(){ $("#mesajAlani").html(""); $scope.chatYukle(kisi); });
+          clearInterval(function(){ $("#mesajAlani").html(""); $scope.loadChat(kisi); });
         $("#chatEkrani").hide();
     }
 
